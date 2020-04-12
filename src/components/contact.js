@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import axios from "axios"
 
 const Contact = () => {
   const [scrolled, setScrolled] = useState(false)
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  })
+
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    })
+    if (ok) {
+      form.reset()
+    }
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 800
@@ -17,13 +33,27 @@ const Contact = () => {
       document.removeEventListener("scroll", handleScroll)
     }
   }, [scrolled])
+
+  const handleOnSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    setServerState({ submitting: true })
+    axios({
+      method: "post",
+      url: "https://getform.io/f/05ae9c28-eee6-4b67-9286-8f692f84f229",
+      data: new FormData(form),
+    })
+      .then(r => {
+        handleServerResponse(true, "Thank you for contacting me!", form)
+      })
+      .catch(r => {
+        handleServerResponse(false, r.response.data.error, form)
+      })
+  }
   return (
     <section id="contact">
       <h2>Contact me:</h2>
-      <form
-        method="POST"
-        action="https://getform.io/f/05ae9c28-eee6-4b67-9286-8f692f84f229"
-      >
+      <form onSubmit={handleOnSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -52,12 +82,14 @@ const Contact = () => {
           required
         ></textarea>
         <br />
+        {serverState.status && <p>{serverState.status.msg}</p>}
         <input
           type="submit"
           name="submit"
           value="Submit"
           className="btn submit"
           id="submit"
+          disabled={serverState.submitting}
         />
       </form>
       <footer>
