@@ -3,10 +3,7 @@
   --secondary-color: #3d6d9e;
 }
 
-@font-face {
-  font-family: "Downlink";
-  src: url("../fonts/Downlink.otf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 html,
 body {
@@ -17,8 +14,7 @@ body {
   background: transparent;
   z-index: 1;
   color: white;
-  font-family: "Downlink";
-  font-size: 0.9rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 input,
@@ -30,7 +26,6 @@ button {
 h1,
 h2,
 h3 {
-  /* text-transform: uppercase; */
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -63,13 +58,6 @@ h3 {
   margin: 10px;
   text-align: center;
   overflow-x: hidden;
-}
-
-#quote {
-  height: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 50px;
 }
 
 .logo img {
@@ -122,7 +110,6 @@ button:hover {
 .btn:nth-child(odd):hover {
   background: var(--secondary-color);
   border: 1px solid white;
-  /* color: black !important; */
   text-decoration: none;
 }
 
@@ -210,8 +197,6 @@ button:hover {
 }
 
 .projects p {
-  /* opacity: 0; */
-
   margin: auto;
   z-index: 2;
   padding-left: 25px;
@@ -224,7 +209,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 60px;
 }
 
@@ -239,11 +224,8 @@ button:hover {
 
 input,
 textarea {
-  /* display: block; */
   width: 25%;
   padding: 15px;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
   margin: 30px auto;
 }
 
