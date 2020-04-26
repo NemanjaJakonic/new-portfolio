@@ -60,6 +60,7 @@ const Contact = () => {
           name="name"
           id="name"
           placeholder="Enter your name..."
+          autoComplete="off"
           required
         />
 
@@ -69,6 +70,7 @@ const Contact = () => {
           name="email"
           id="email"
           placeholder="Enter your email..."
+          autoComplete="off"
           required
         />
 

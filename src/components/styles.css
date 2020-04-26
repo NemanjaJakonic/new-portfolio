@@ -23,6 +23,10 @@ button {
   font-family: inherit;
 }
 
+button {
+  all: unset;
+}
+
 h1,
 h2,
 h3 {
@@ -227,6 +231,7 @@ textarea {
   width: 25%;
   padding: 15px;
   margin: 30px auto;
+  border: 2px solid transparent;
 }
 
 label {
@@ -235,7 +240,13 @@ label {
 
 input:focus,
 textarea:focus {
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+
 }
 
 .submit {
