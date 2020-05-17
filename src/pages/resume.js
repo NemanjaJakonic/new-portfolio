@@ -1,4 +1,5 @@
 import React from "react"
+import "../components/styles.css"
 import { useStaticQuery, graphql } from "gatsby"
 
 const DownloadsPage = () => {
@@ -15,26 +16,13 @@ const DownloadsPage = () => {
     }
   `)
   return (
-    <div
-      style={{ backgroundColor: "#1a1a1a", height: "100vh", width: "100vw" }}
-    >
-      <h1
-        style={{
-          margin: "0",
-          padding: "2rem",
-        }}
-      >
-        Download
-      </h1>
+    <div id="resume">
+      <h1>Download</h1>
       <ul>
         {data.allFile.edges.map((file, index) => {
           return (
             <li key={`pdf-${index}`}>
-              <a
-                style={{ color: "var(--primary-color)" }}
-                href={file.node.publicURL}
-                download
-              >
+              <a href={file.node.publicURL} download>
                 {file.node.name}
               </a>
             </li>
