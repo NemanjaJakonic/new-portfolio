@@ -203,6 +203,8 @@ button:hover {
 .projects p {
   margin: auto;
   z-index: 2;
+  width: 500px;
+  min-height: 40px;
   padding-left: 25px;
   padding-right: 25px;
 }
