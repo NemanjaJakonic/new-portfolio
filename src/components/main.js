@@ -33,7 +33,7 @@ const Main = () => {
         <img
           src={Logo}
           alt="logo"
-          title="Shoutout to my girlfriend who made this photo ;)"
+          title="Shoutout to my wife who made this photo ;)"
         />
       </div>
     </section>
