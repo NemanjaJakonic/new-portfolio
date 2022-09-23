@@ -9,10 +9,9 @@ require("dotenv").config({
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "G-L5V0HY4ZKB",
+        trackingIds: "G-L5V0HY4ZKB",
       },
     },
     `gatsby-plugin-smoothscroll`,
