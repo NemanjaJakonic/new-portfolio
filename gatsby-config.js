@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: "G-L5V0HY4ZKB",
+        trackingId: "G-L5V0HY4ZKB",
       },
     },
     `gatsby-plugin-smoothscroll`,
