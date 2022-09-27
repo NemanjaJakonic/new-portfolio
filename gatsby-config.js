@@ -15,9 +15,9 @@ module.exports = {
       },
     },
     `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

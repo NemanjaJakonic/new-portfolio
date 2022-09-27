@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Baffle from "baffle-react"
 
 const Projects = () => {
@@ -22,9 +22,7 @@ const Projects = () => {
             technologies
           }
           image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -40,6 +38,7 @@ const Projects = () => {
         <h2>Projects:</h2>
         <div className="project-container">
           {projects.map(project => {
+            //const image = getImage(project.image.gatsbyImageData)
             return (
               <div className="projects" key={project.id}>
                 <h3>{project.title}</h3>
@@ -50,7 +49,10 @@ const Projects = () => {
                   onMouseEnter={() => [SetId(project.id)]}
                 >
                   <div className="overlay"></div>
-                  <Image
+
+                  <GatsbyImage
+                    image={project.image.gatsbyImageData}
+                    alt={project.title}
                     style={{
                       position: "absolute",
                       left: 0,
@@ -59,7 +61,6 @@ const Projects = () => {
                       height: "100%",
                       borderRadius: "5px",
                     }}
-                    fluid={project.image.fluid}
                   />
 
                   <a
