@@ -10,9 +10,9 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: "G-L5V0HY4ZKB",
-      },
+       trackingIds: [
+          "G-L5V0HY4ZKB", // Google Analytics / GA
+        ],
     },
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-image`,
