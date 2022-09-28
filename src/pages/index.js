@@ -1,6 +1,6 @@
 import React from "react"
-import ParticlesCanvas from "../components/particles"
 import "../components/styles.css"
+import ParticlesCanvas from "../components/particles"
 import Main from "../components/main"
 import Navbar from "../components/navbar"
 import Projects from "../components/projects"
