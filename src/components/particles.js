@@ -71,7 +71,7 @@ const ParticlesCanvas = () => {
               default: "out",
             },
             random: false,
-            speed: 3,
+            speed: 1,
             straight: false,
             attract: {
               enable: false,
