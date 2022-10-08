@@ -27,29 +27,7 @@ const ParticlesCanvas = () => {
             value: "#1a1a1a",
           },
         },
-        fpsLimit: 120,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: false,
-              mode: "push",
-            },
-            onHover: {
-              enable: false,
-              mode: "repulse",
-            },
-            resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
+        fpsLimit: 60,
         particles: {
           color: {
             value: "#ffffff",
@@ -62,7 +40,7 @@ const ParticlesCanvas = () => {
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             directions: "none",
@@ -71,7 +49,7 @@ const ParticlesCanvas = () => {
               default: "out",
             },
             random: false,
-            speed: 1,
+            speed: 1.5,
             straight: false,
             attract: {
               enable: false,
@@ -90,13 +68,13 @@ const ParticlesCanvas = () => {
             value: 0.5,
           },
           shape: {
-            type: "circle",
+            type: "square",
           },
           size: {
             value: { min: 1, max: 5 },
           },
         },
-        detectRetina: true,
+        detectRetina: false,
       }}
     />
   )
